@@ -44,3 +44,18 @@ document.addEventListener("visibilitychange", () => {
     music.play().catch(() => {});
   }
 });
+
+
+const music = document.getElementById("bgMusic");
+
+let musicPlayed = false;
+
+document.addEventListener("click", () => {
+  if (!musicPlayed) {
+    music.play().then(() => {
+      musicPlayed = true;
+    }).catch(() => {
+      console.log("User interaction required");
+    });
+  }
+});
