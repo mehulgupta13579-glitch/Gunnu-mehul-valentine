@@ -104,3 +104,19 @@ yesBtn.addEventListener("click", () => {
     window.location.href = "final.html";
   }, 400);
 });
+
+// 🎵 Music on YES click
+const yesBtn = document.getElementById("yesBtn");
+const bgMusic = document.getElementById("bgMusic");
+
+if (yesBtn && bgMusic) {
+  yesBtn.addEventListener("click", () => {
+    bgMusic.play().then(() => {
+      setTimeout(() => {
+        window.location.href = "final.html";
+      }, 700);
+    }).catch(() => {
+      window.location.href = "final.html";
+    });
+  });
+}
